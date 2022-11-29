@@ -45,7 +45,6 @@
         padding: 2px 8px;
         border-radius: 5px;
         }
-
         .minefloor.outerTableFooter {
         border-top: none;
         }
@@ -80,6 +79,7 @@
             background: gray;
             width: 100%;
             height: 100%;
+            font-size: 3em;
         }
         .btntile:hover{
             background: rgb(170, 170, 170);
@@ -89,6 +89,7 @@
             width: 95%;
             height: 95%;
             box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+            font-size: 3em;
         }
         .disTiles{
             border: none;
@@ -97,6 +98,13 @@
             width: 95%;
             height: 95%;
             box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+            font-size: 3em;
+        }
+        .mineReveal{
+            border: none;
+            color: rgb(255, 0, 0);
+            background: rgb(255, 0, 0);
+            box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
         }
         .Stepped{
             width: 95%;
@@ -200,17 +208,18 @@
         <a class="restbtn" href="#" role="button" onclick="refreshPage()">Reset</a>
         <div style="background: gray; width:100px;border-radius: 7px ;margin: 25px; padding: 7px 0 10px 0;">
            
-            <label for="Handicap">HandiCap:</label> <input id="handiCap" type="number" max="10" min="1" class="configSet" value="1">
-            <button id="applyHndCap" onClick="applyHandyCap()">Apply</button><br><br><hr><br>
+            <label>HandiCap:</label> <input id="handiCap" type="number" max="5" min="1" class="configSet" value="3">
+            <button id="applyHndCap" onclick="disableHandiCap()">Apply</button><br><br><hr><br>
           
-            <label for="Handicap">No. of Mines:</label> <input id="numberMines" type="number" max="10" min="1" class="configSet" value="1">
-            <button id="applyHndCap" onClick="applynumberMines()">Apply</button>
+            <label>No. of Mines:</label> <input id="numberMines" type="number" max="10" min="1" onmouseup="changeMineno()" class="configSet" value="5">
+            <button id="applyHndCap2" onClick="applynumberMines()">Apply</button>
 
         </div>
            
     </center>
     
      </div>
-    <script src="script.js"></script>
+
+     <script src="script.js"></script>
 </body>
 </html>
