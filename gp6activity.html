@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine Sweeper</title>
+    <style>
+        *{
+        margin: 0 auto;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        -ms-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        user-select: none;
+        }
+        div.minefloor {
+        border: 1px solid #1C6EA4;
+        background-color: #5a5a5a;
+        /* box-shadow: 2px 2px 10px rgb(255, 255, 255); */
+        width: 250px;
+        height: 250px;
+        text-align: left;
+        border-collapse: collapse;
+        }
+        .divTable.minefloor .divTableCell, .divTable.minefloor .divTableHead {
+        border: 7px solid #AAAAAA;
+        padding: 3px 2px;
+        }
+        .divTable.minefloor .divTableBody .divTableCell {
+        font-size: 13px;
+        }
+        .minefloor .tableFootStyle {
+        font-size: 14px;
+        }
+        .minefloor .tableFootStyle .links {
+            text-align: right;
+        }
+        .minefloor .tableFootStyle .links a{
+        display: inline-block;
+        background: #1C6EA4;
+        color: #FFFFFF;
+        padding: 2px 8px;
+        border-radius: 5px;
+        }
+
+        .minefloor.outerTableFooter {
+        border-top: none;
+        }
+        .minefloor.outerTableFooter .tableFootStyle {
+        padding: 3px 5px; 
+        }
+        .divTable{ 
+            display: table; 
+        }
+        .divTableRow { 
+            display: table-row;
+         }
+        .divTableHeading { 
+            display: table-header-group;
+        }
+        .divTableCell, .divTableHead { 
+            display: table-cell;
+        }
+        .divTableHeading { 
+            display: table-header-group;
+        }
+        .divTableFoot { 
+            display: table-footer-group;
+        }
+        .divTableBody { 
+            display: table-row-group;
+        }
+        
+        .btntile{
+            border: none;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.75);
+            background: gray;
+            width: 100%;
+            height: 100%;
+        }
+        .btntile:hover{
+            background: rgb(170, 170, 170);
+        }
+        .btntile:active{
+            background: rgb(128, 128, 128);
+            width: 95%;
+            height: 95%;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+        }
+        .disTiles{
+            border: none;
+            color: darkgray;
+            background: rgb(128, 128, 128);
+            width: 95%;
+            height: 95%;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+        }
+        .Stepped{
+            width: 95%;
+            height: 95%;
+            background: rgb(215, 214, 214);
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
+        }
+        .marginaryfriend{
+            margin: 150px 0 15px 0;
+            text-align: center;
+        }
+        .restbtn{
+            box-shadow: 2px 2px 2px gray;
+            background: gray;
+            margin-top: 20px;
+            padding: 7px 7px 7px 7px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            height: 25px;
+            border-radius: 7px;
+        }
+        .configSet{
+          width: 30px;
+          margin: 20px 20px 10px 20px;
+          border: solid rgb(59, 59, 59);
+        }
+    </style>
+</head>
+<body>
+    <div class="marginaryfriend">
+        <h1>EVADE MINES NG GROUP 6</h1><br>
+        <h2 id="minesToEvade">Evade all 5 mines!</h2>
+        <p id="points"> Total Points: 0</p>
+        <br>
+        <h2 id="Message"> GAME STARTED! </h2>    
+    </div>
+
+    <div class="divTable minefloor">
+        <div id="" class="divTableBody">
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <button id="btntiles0" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles1" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles2" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles3" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <button id="btntiles4" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles5" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles6" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles7" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <button id="btntiles8" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles9" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles10" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles11" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+            </div>
+            <div class="divTableRow">
+                <div class="divTableCell">
+                    <button id="btntiles12" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles13" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles14" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+                <div class="divTableCell">
+                    <button id="btntiles15" onClick="removetile(this);addPoints()" class="btntile">?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+     <div>
+    <center><br>
+        <a class="restbtn" href="#" role="button" onclick="refreshPage()">Reset</a>
+        <div style="background: gray; width:100px;border-radius: 7px ;margin: 25px; padding: 7px 0 10px 0;">
+           
+            <label for="Handicap">HandiCap:</label> <input id="handiCap" type="number" max="10" min="1" class="configSet" value="1">
+            <button id="applyHndCap" onClick="applyHandyCap()">Apply</button><br><br><hr><br>
+          
+            <label for="Handicap">No. of Mines:</label> <input id="numberMines" type="number" max="10" min="1" class="configSet" value="1">
+            <button id="applyHndCap" onClick="applynumberMines()">Apply</button>
+
+        </div>
+           
+    </center>
+    
+     </div>
+<script>
+        var handycap = (document.getElementById("handiCap").value * 0.1);
+        let points = 0;
+        let clearTiles = 5;
+        function addPoints(){
+        points += 1;
+        
+
+        
+        if (points>=clearTiles){
+            clearalltiles();
+            document.getElementById('Message').innerHTML = clearTiles + ' Mines evaded! You Win!';
+            document.getElementById('Message').style = "color:blue";
+            // refreshPage();
+        }
+            document.getElementById('points').innerHTML = ' Total Points: ' + points;
+        }
+
+        function removetile(tile){
+            const test1 = Math.random() > handycap ? true : false;
+            if (test1==true) {
+                tile.parentElement.style.visibility = 'hidden';
+            }else{
+                clearalltiles();
+                document.getElementById('Message').innerHTML = "G A M E   O V E R !";
+                document.getElementById('Message').style = "color:red";
+            }
+        }
+        function refreshPage(){
+        window.location.reload();
+        }
+        
+        function applyHandyCap(){
+            var handycap = (document.getElementById("handiCap").value * 0.1);
+        }
+
+        function applynumberMines(){
+            var clearTiles = (document.getElementById("numberMines").value);
+            document.getElementById("minesToEvade").innerText = "Evade all " + clearTiles + " mines!";
+        }
+        function clearalltiles(){
+            let tileNo = 0;                      
+            while (tileNo < 16) {  
+            document.getElementById("btntiles"+tileNo).innerText = "X";
+            document.getElementById("btntiles"+tileNo).className = 'disTiles';
+            document.getElementById("btntiles"+tileNo).onclick = '';
+            tileNo ++;    
+            }
+        }
+</script>
+</body>
+</html>
