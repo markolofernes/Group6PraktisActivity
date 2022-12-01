@@ -5,12 +5,12 @@ let pointsPerEvade = 150;
 let tiles = 16;
 function addPoints(){
 
-if (points>=(document.getElementById("numberMines").value)){
+if (points>=(document.getElementById("numberMines").value)){ 
     clearalltilesWin();
     document.getElementById('Message').innerHTML = (document.getElementById("numberMines").value) + ' Burger Bombs cleared! You Win!';
-    document.getElementById('Message').style = "color:blue";
+    document.getElementById('Message').className = "vegas";
 }
-    document.getElementById('points').innerHTML = ' Total Points: ' + points * pointsPerEvade;
+    document.getElementById('points').innerHTML = points * pointsPerEvade;
 }
 
 function removetile(tile){
@@ -37,7 +37,7 @@ function applyHandyCap(){
 
 function changeMineno(){
     var clearTiles = (document.getElementById("numberMines").value);
-    document.getElementById("minesToEvade").innerText = "Evade all " + clearTiles + " mines!";
+    document.getElementById("minesToEvade").innerText = "Get rid of " + clearTiles;
 }
 function clearalltiles(){
     new Audio("snd/boom.mp3").play();

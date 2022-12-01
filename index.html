@@ -18,7 +18,7 @@
         user-select: none;
         background: black;
         }
-        .spicyHot {
+        .spicyHot{
             color: #FFF;
             background-color: rgb(0, 0, 0);
             text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
@@ -27,6 +27,22 @@
             color: #FFF;
             background-color: #232323;
             text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18
+        }
+        .secondary{
+            color: rgba(255,255,255,.3);
+            background: #000000;
+            text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+        }
+        .standout{
+            color: rgba(255, 56, 56, 0.3);
+            background: #000000;
+            text-shadow: 0 0 1px rgba(255,255,255,.25), 0 0 2px rgba(255,255,255,.25);
+        }
+        .vegas{
+            color: #FFFFFF;
+            background: #000000;
+            text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #FF2D95 0px 0px 20px, #FF2D95 0px 0px 30px, #FF2D95 0px 0px 40px, #FF2D95 0px 0px 50px, #FF2D95 0px 0px 75px;
+            color: #FFFFFF;
         }
         div.minefloor {
         background-color: #5a5a5a;
@@ -115,7 +131,7 @@
           border: solid rgb(59, 59, 59);
         }
         .marginalpadding{
-            padding: 50px;
+            padding: 0 0 25px 0;
             background: black;
         }
     </style>
@@ -124,14 +140,14 @@
     <div class="row container-fluid">
         <div class="col-sm-6">
             
-            <div class="marginaryfriend spicyHot">
-                <h1>GET RID OF BRYL BURGER BOMBS</h1>
-                <h2>WD29 GROUP 6</h2>
-                <h2 id="minesToEvade" class="marginalpadding">Get rid of 🍔 5 burgers bombs!</h2>
-                <h3>some bombs are disguised as Bryl's Burger, go get rid of them</h3>
-                <p id="points"> Total Points: 0</p>
+            <div class="marginaryfriend">
+                <h1 class="spicyHot">GET RID OF BRYL BURGER BOMBS</h1>
+                <h2 class="secondary marginalpadding">WD29 GROUP 6</h2>
+                <h2 id="minesToEvade" class="p5 secondary">Get rid of 5 </h2> <h2><span class="spicyHot">🍔 Spicy </span><span class="secondary">burger bombs!</span></h2>
+                <h3 class="standout">some bombs are disguised as Bryl's Burger, go get rid of them</h3>
+                <h5 class="secondary">Total Points:</h5><h4 id="points" class="vegas">0</h4>
             
-                <h2 id="Message"> GAME STARTED! </h2>    
+                <h2 id="Message" class="standout"> GAME STARTED! </h2>    
             </div>
 
             <div class="divTable minefloor">
