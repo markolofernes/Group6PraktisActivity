@@ -234,6 +234,7 @@ function changeMineno(){
     document.getElementById("minesToEvade").innerText = "Evade all " + clearTiles + " mines!";
 }
 function clearalltiles(){
+    new Audio("snd/boom.mp3").play();
     let bombleft =  document.getElementById("bombremain").innerText;
     
     let tileNo = 0;                      
