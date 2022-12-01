@@ -21,7 +21,8 @@ function removetile(tile){
         document.getElementById("bombremain").innerText = (document.getElementById("numberMines").value) - points;
     }else{
         document.getElementById('Message').innerHTML = "G A M E   O V E R !";
-        document.getElementById('Message').style = "color:red";
+        document.getElementById('Message').className = "gameover";
+        document.getElementById('Message').style = "font-size: 77px";
         tile.parentElement.style = "background:red;border-radius:100px;";
         tile.getElementsByClassName("btntile").className = "mineReveal";
         clearalltiles();
