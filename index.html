@@ -15,6 +15,17 @@
         -webkit-user-drag: none;
         -webkit-user-select: none;
         user-select: none;
+        background: black;
+        }
+        .spicyHot {
+            color: #FFF;
+            background-color: rgb(0, 0, 0);
+            text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
+        }
+        #demotext {
+            color: #FFF;
+            background-color: #333;
+            text-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px;
         }
         div.minefloor {
         background-color: #5a5a5a;
@@ -102,16 +113,20 @@
           margin: 20px 20px 10px 20px;
           border: solid rgb(59, 59, 59);
         }
+        .marginalpadding{
+            padding: 50px;
+            background: black;
+        }
     </style>
 </head>
 <body>
-    <div class="marginaryfriend">
+    <div class="marginaryfriend spicyHot">
         <h1>GET RID OF BRYL BURGER BOMBS</h1>
-        <h2>WD29 GROUP 6</h2><br><hr><br>
-        <h2 id="minesToEvade">Get rid of 🍔 5 burgers bombs!</h2>
-        <h3>some bombs are disguised as Bryl's Burger, go get rid of them</h3><br><hr>
+        <h2>WD29 GROUP 6</h2>
+        <h2 id="minesToEvade" class="marginalpadding">Get rid of 🍔 5 burgers bombs!</h2>
+        <h3>some bombs are disguised as Bryl's Burger, go get rid of them</h3>
         <p id="points"> Total Points: 0</p>
-        <br>
+      
         <h2 id="Message"> GAME STARTED! </h2>    
     </div>
 
@@ -176,22 +191,21 @@
         </div>
     </div>
      <div>
-    <center><br>
-        <a class="restbtn" href="#" role="button" onclick="refreshPage()">Reset</a>
+    <center class="spicyHot"><br>
+        <a class="restbtn spicyHot" href="#" role="button" onclick="refreshPage()">Reset</a>
         <div style="background: gray; width:100px;border-radius: 7px ;margin: 25px; padding: 7px 0 10px 0;">
            
-            <label>HandiCap:</label> <input id="handiCap" type="number" max="7" min="1" class="configSet" value="3">
-            <button id="applyHndCap" onclick="disableHandiCap()">Apply</button><br><br><hr><br>
+            <label>HandiCap:</label> <input id="handiCap" type="number" max="7" min="1" class="configSet spicyHot" value="3">
+            <button id="applyHndCap" class=" spicyHot" onclick="disableHandiCap()">Apply</button><br><br><hr><br>
           
-            <label>No. of Mines:</label> <input id="numberMines" type="number" max="10" min="1" onmouseup="changeMineno()" class="configSet" value="5">
-            <button id="applyHndCap2" onClick="applynumberMines()">Apply</button>
+            <label>No. of Mines:</label> <input id="numberMines" type="number" max="10" min="1" onmouseup="changeMineno()" class="configSet spicyHot" value="5">
+            <button id="applyHndCap2" class=" spicyHot" onClick="applynumberMines()">Apply</button>
 
         </div>
            
     </center>
     <h1 id="bombremain" style="display: none;">5</h1>
      </div>
-
 <script src="script.js">
 </script>
 </body>
