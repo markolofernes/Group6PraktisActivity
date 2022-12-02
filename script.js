@@ -38,7 +38,7 @@ function applyHandyCap(){
 
 function changeMineno(){
     var clearTiles = (document.getElementById("numberMines").value);
-    document.getElementById("minesToEvade").innerText = "Get rid of " + clearTiles;
+    document.getElementById("minesToEvade").innerText = "Eat at least " + clearTiles;
 }
 function clearalltiles(){
     new Audio("snd/boom.mp3").play();
